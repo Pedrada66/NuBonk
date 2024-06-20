@@ -3,7 +3,9 @@
  */
 
 package com.mycompany.nubonk;
-import View.TelaInicial;
+import View.TelaCadastro;
+//import View.TelaInicial;
+//import View.TelaPrincipal;
 /**
  *
  * @author pedro
@@ -12,7 +14,7 @@ public class NuBonk {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        TelaInicial tp = new TelaInicial();
-        tp.setVisible(true);
+        //TelaInicial tp = new TelaInicial();
+        TelaCadastro tpp = new TelaCadastro();
     }
 }
