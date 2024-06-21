@@ -15,6 +15,7 @@ public class TelaCadastro extends javax.swing.JFrame {
      */
     public TelaCadastro() {
         initComponents();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -48,7 +49,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setText("Voltar");
 

@@ -9,7 +9,7 @@ package Model;
  * @author pedro
  */
 public class Investimentos {
-    String nome, código;
+    String nome, codigo;
     float valor;
 
     public Investimentos() {
@@ -24,12 +24,12 @@ public class Investimentos {
         this.nome = nome;
     }
 
-    public String getCódigo() {
-        return código;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCódigo(String código) {
-        this.código = código;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public float getValor() {

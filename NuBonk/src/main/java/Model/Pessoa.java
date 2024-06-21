@@ -8,39 +8,39 @@ package Model;
  *
  * @author pedro
  */
-public class Pessoa {
-    int cpf, telefone, dataNascimento;
-    String nome, endereço, genero, email, senha;
+public abstract class Pessoa {
+    String cpf, telefone, dataNascimento;
+    String nome, endereco, genero, email, senha;
 
     public Pessoa() {
     }
 
-    public Pessoa(int cpf, String senha) {
+    public Pessoa(String cpf, String senha) {
         this.cpf = cpf;
         this.senha = senha;
     }
     
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public int getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(int dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -52,12 +52,12 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getGenero() {

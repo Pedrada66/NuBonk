@@ -4,7 +4,9 @@
 
 package com.mycompany.nubonk;
 import View.TelaCadastro;
-//import View.TelaInicial;
+import View.TelaInvestimentos;
+import View.TelaInicial;
+import View.TelaVerificacao;
 //import View.TelaPrincipal;
 /**
  *
@@ -15,6 +17,8 @@ public class NuBonk {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         //TelaInicial tp = new TelaInicial();
-        TelaCadastro tpp = new TelaCadastro();
+        //TelaCadastro tpp = new TelaCadastro();
+        TelaInvestimentos ti = new TelaInvestimentos();
+        TelaVerificacao tv = new TelaVerificacao();
     }
 }
