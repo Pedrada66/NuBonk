@@ -1,6 +1,9 @@
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorInicial.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaInvestimentos.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaAdm.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorPessoa.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorAdm.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaDeposito.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaInicial.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaPrincipal.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\com\mycompany\nubonk\NuBonk.java
@@ -9,11 +12,13 @@ C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\Te
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaAlterarContaAdm.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Model\Adm.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaInvestimentosAdm.java
-C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaDepósito.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Model\Investimentos.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaAlterarConta.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorInvestimentos.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Model\Cliente.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaAdicionaInvestimentos.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorCliente.java
+C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\Controller\GerenciadorDAO.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaCadastro.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaConta.java
 C:\Users\pedro\OneDrive\Documentos\NetBeansProjects\NuBonk\src\main\java\View\TelaFAQ.java

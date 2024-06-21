@@ -28,67 +28,67 @@ public class TelaConta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        RotInformacao = new javax.swing.JLabel();
+        BtVoltar = new javax.swing.JButton();
+        BtAlterar = new javax.swing.JButton();
+        BtRemover = new javax.swing.JButton();
+        RotNome = new javax.swing.JLabel();
+        RotData = new javax.swing.JLabel();
+        RotCpf = new javax.swing.JLabel();
+        RotGenero = new javax.swing.JLabel();
+        RotTelefone = new javax.swing.JLabel();
+        RotEndereco = new javax.swing.JLabel();
+        RotEmail = new javax.swing.JLabel();
+        ValorNome = new javax.swing.JLabel();
+        ValorData = new javax.swing.JLabel();
+        ValorCpf = new javax.swing.JLabel();
+        ValorGenero = new javax.swing.JLabel();
+        ValorTelefone = new javax.swing.JLabel();
+        ValorEmail = new javax.swing.JLabel();
+        ValorEndereco = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Dados da conta:");
+        RotInformacao.setText("Dados da conta:");
 
-        jButton1.setText("Voltar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtVoltar.setText("Voltar");
+        BtVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtVoltarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Alterar");
+        BtAlterar.setText("Alterar");
 
-        jButton3.setText("Remover");
+        BtRemover.setText("Remover");
 
-        jLabel2.setText("Nome:");
+        RotNome.setText("Nome:");
 
-        jLabel4.setText("Data de Nascimento:");
+        RotData.setText("Data de Nascimento:");
 
-        jLabel5.setText("CPF:");
+        RotCpf.setText("CPF:");
 
-        jLabel6.setText("Gênero:");
+        RotGenero.setText("Gênero:");
 
-        jLabel7.setText("Telefone:");
+        RotTelefone.setText("Telefone:");
 
-        jLabel8.setText("Endereço:");
+        RotEndereco.setText("Endereço:");
 
-        jLabel9.setText("Email:");
+        RotEmail.setText("Email:");
 
-        jLabel3.setText("NOME USUÁRIO");
+        ValorNome.setText("NOME USUÁRIO");
 
-        jLabel10.setText("17/05/2002");
+        ValorData.setText("17/05/2002");
 
-        jLabel11.setText("748.849.920-34");
+        ValorCpf.setText("748.849.920-34");
 
-        jLabel12.setText("MASCULINO");
+        ValorGenero.setText("MASCULINO");
 
-        jLabel13.setText("(11) 96273-9392");
+        ValorTelefone.setText("(11) 96273-9392");
 
-        jLabel14.setText("USUÁRIO@GMAIL");
+        ValorEmail.setText("USUÁRIO@GMAIL");
 
-        jLabel15.setText("Rua Alguma coisa");
+        ValorEndereco.setText("Rua Alguma coisa");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,96 +98,96 @@ public class TelaConta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
-                        .addComponent(jButton2)
+                        .addComponent(BtAlterar)
                         .addGap(128, 128, 128)
-                        .addComponent(jButton3))
+                        .addComponent(BtRemover))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(213, 213, 213)
-                        .addComponent(jButton1))
+                        .addComponent(BtVoltar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(RotNome)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3))
+                                .addComponent(ValorNome))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(RotGenero)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12))
+                                .addComponent(ValorGenero))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addComponent(RotEmail)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel14))
+                                .addComponent(ValorEmail))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addComponent(RotEndereco)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel15))
+                                .addComponent(ValorEndereco))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(RotTelefone)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13))
+                                .addComponent(ValorTelefone))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(RotCpf)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11))
+                                .addComponent(ValorCpf))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(RotData)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10))))
+                                .addComponent(ValorData))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(jLabel1)))
+                        .addComponent(RotInformacao)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(RotInformacao)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(RotNome)
+                    .addComponent(ValorNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel10))
+                    .addComponent(RotData)
+                    .addComponent(ValorData))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel11))
+                    .addComponent(RotCpf)
+                    .addComponent(ValorCpf))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel12))
+                    .addComponent(RotGenero)
+                    .addComponent(ValorGenero))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel13))
+                    .addComponent(RotTelefone)
+                    .addComponent(ValorTelefone))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel15))
+                    .addComponent(RotEndereco)
+                    .addComponent(ValorEndereco))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel14))
+                    .addComponent(RotEmail)
+                    .addComponent(ValorEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(BtAlterar)
+                    .addComponent(BtRemover))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(BtVoltar)
                 .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,23 +225,23 @@ public class TelaConta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton BtAlterar;
+    private javax.swing.JButton BtRemover;
+    private javax.swing.JButton BtVoltar;
+    private javax.swing.JLabel RotCpf;
+    private javax.swing.JLabel RotData;
+    private javax.swing.JLabel RotEmail;
+    private javax.swing.JLabel RotEndereco;
+    private javax.swing.JLabel RotGenero;
+    private javax.swing.JLabel RotInformacao;
+    private javax.swing.JLabel RotNome;
+    private javax.swing.JLabel RotTelefone;
+    private javax.swing.JLabel ValorCpf;
+    private javax.swing.JLabel ValorData;
+    private javax.swing.JLabel ValorEmail;
+    private javax.swing.JLabel ValorEndereco;
+    private javax.swing.JLabel ValorGenero;
+    private javax.swing.JLabel ValorNome;
+    private javax.swing.JLabel ValorTelefone;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,8 +16,6 @@ public class GerenciadorInicial {
 
     public GerenciadorInicial() {
         ti = new TelaInicial();
-        
     }
-    
     
 }

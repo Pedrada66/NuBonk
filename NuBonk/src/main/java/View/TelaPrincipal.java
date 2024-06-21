@@ -28,28 +28,48 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BtConta = new javax.swing.JButton();
+        BtInvestimentos = new javax.swing.JButton();
+        BtDepositos = new javax.swing.JButton();
+        BtFaq = new javax.swing.JButton();
+        BtSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setText("Conta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtConta.setText("Conta");
+        BtConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtContaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Investimentos");
+        BtInvestimentos.setText("Investimentos");
+        BtInvestimentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtInvestimentosActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Depósitos");
+        BtDepositos.setText("Depósitos");
+        BtDepositos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtDepositosActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("FAQ");
+        BtFaq.setText("FAQ");
+        BtFaq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtFaqActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Sair da conta");
+        BtSair.setText("Sair da conta");
+        BtSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,35 +78,62 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtInvestimentos, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(BtConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtDepositos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtFaq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jButton1)
+                .addComponent(BtConta)
                 .addGap(37, 37, 37)
-                .addComponent(jButton2)
+                .addComponent(BtInvestimentos)
                 .addGap(37, 37, 37)
-                .addComponent(jButton3)
+                .addComponent(BtDepositos)
                 .addGap(37, 37, 37)
-                .addComponent(jButton4)
+                .addComponent(BtFaq)
                 .addGap(37, 37, 37)
-                .addComponent(jButton5)
+                .addComponent(BtSair)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtContaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        dispose();
+        TelaConta tc = new TelaConta();
+        //JOptionPane.showMessageDialog(this, "Invalid action! Please try again.", "Warning", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_BtContaActionPerformed
+
+    private void BtInvestimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtInvestimentosActionPerformed
+        // TODO add your handling code here:
+        //setVisible(false);
+        dispose();
+        TelaInvestimentos ti = new TelaInvestimentos();
+    }//GEN-LAST:event_BtInvestimentosActionPerformed
+
+    private void BtDepositosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDepositosActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaDeposito td = new TelaDeposito();
+    }//GEN-LAST:event_BtDepositosActionPerformed
+
+    private void BtFaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtFaqActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaFAQ tf = new TelaFAQ();
+    }//GEN-LAST:event_BtFaqActionPerformed
+
+    private void BtSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSairActionPerformed
+        // TODO add your handling code here:
+        //criar método na classe do DAO para desconectar conta
+    }//GEN-LAST:event_BtSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,10 +171,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton BtConta;
+    private javax.swing.JButton BtDepositos;
+    private javax.swing.JButton BtFaq;
+    private javax.swing.JButton BtInvestimentos;
+    private javax.swing.JButton BtSair;
     // End of variables declaration//GEN-END:variables
 }
