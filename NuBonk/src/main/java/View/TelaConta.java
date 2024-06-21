@@ -4,6 +4,9 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+
 /**
  *
  * @author pedro
@@ -59,8 +62,18 @@ public class TelaConta extends javax.swing.JFrame {
         });
 
         BtAlterar.setText("Alterar");
+        BtAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtAlterarActionPerformed(evt);
+            }
+        });
 
         BtRemover.setText("Remover");
+        BtRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtRemoverActionPerformed(evt);
+            }
+        });
 
         RotNome.setText("Nome:");
 
@@ -187,7 +200,20 @@ public class TelaConta extends javax.swing.JFrame {
 
     private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaPrincipal tp = new TelaPrincipal();
     }//GEN-LAST:event_BtVoltarActionPerformed
+
+    private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaAlterarConta tac = new TelaAlterarConta();
+    }//GEN-LAST:event_BtAlterarActionPerformed
+
+    private void BtRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRemoverActionPerformed
+        // TODO add your handling code here:
+        TelaVerificacao tv = new TelaVerificacao();
+    }//GEN-LAST:event_BtRemoverActionPerformed
 
     /**
      * @param args the command line arguments

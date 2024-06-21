@@ -52,19 +52,24 @@ public class TelaCadastro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         BtVoltar.setText("Voltar");
+        BtVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtVoltarActionPerformed(evt);
+            }
+        });
 
         BtCadastrar.setText("Cadastrar");
+        BtCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtCadastrarActionPerformed(evt);
+            }
+        });
 
         GrupoGenero.add(RbtFeminino);
         RbtFeminino.setText("Feminino");
 
         GrupoGenero.add(RbtMasculino);
         RbtMasculino.setText("Masculino");
-        RbtMasculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RbtMasculinoActionPerformed(evt);
-            }
-        });
 
         RotGenero.setText("Gênero:");
 
@@ -87,11 +92,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        FtxtData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FtxtDataActionPerformed(evt);
-            }
-        });
 
         try {
             FtxtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -206,13 +206,18 @@ public class TelaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RbtMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RbtMasculinoActionPerformed
+    private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RbtMasculinoActionPerformed
+        dispose();
+        TelaInicial ti = new TelaInicial();
+    }//GEN-LAST:event_BtVoltarActionPerformed
 
-    private void FtxtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FtxtDataActionPerformed
+    private void BtCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FtxtDataActionPerformed
+        //mandar para o DAO
+        dispose();
+        TelaPrincipal tp = new TelaPrincipal();
+    }//GEN-LAST:event_BtCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

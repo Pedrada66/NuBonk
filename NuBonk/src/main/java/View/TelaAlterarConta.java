@@ -101,10 +101,13 @@ public class TelaAlterarConta extends javax.swing.JFrame {
 
     private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaConta tc = new TelaConta();
     }//GEN-LAST:event_BtVoltarActionPerformed
 
     private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
         // TODO add your handling code here:
+        TelaVerificacao tv = new TelaVerificacao();
     }//GEN-LAST:event_BtAlterarActionPerformed
 
     /**

@@ -108,7 +108,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         TelaConta tc = new TelaConta();
-        //JOptionPane.showMessageDialog(this, "Invalid action! Please try again.", "Warning", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_BtContaActionPerformed
 
     private void BtInvestimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtInvestimentosActionPerformed
@@ -133,6 +132,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void BtSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSairActionPerformed
         // TODO add your handling code here:
         //criar método na classe do DAO para desconectar conta
+        dispose();
+        TelaInicial ti = new TelaInicial();
     }//GEN-LAST:event_BtSairActionPerformed
 
     /**

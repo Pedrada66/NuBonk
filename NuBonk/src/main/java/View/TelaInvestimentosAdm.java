@@ -37,18 +37,38 @@ public class TelaInvestimentosAdm extends javax.swing.JFrame {
 
         TabelaInvestimentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Nome", "Valor"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TabelaInvestimentos);
 
         BtVoltar.setText("Voltar");
+        BtVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtVoltarActionPerformed(evt);
+            }
+        });
 
         BtCadastrarInvestimentos.setText("Cadastrar Investimento");
         BtCadastrarInvestimentos.addActionListener(new java.awt.event.ActionListener() {
@@ -62,15 +82,12 @@ public class TelaInvestimentosAdm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addComponent(BtVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
                 .addComponent(BtCadastrarInvestimentos)
                 .addGap(92, 92, 92))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +106,15 @@ public class TelaInvestimentosAdm extends javax.swing.JFrame {
 
     private void BtCadastrarInvestimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastrarInvestimentosActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaAdicionaInvestimentos tai = new TelaAdicionaInvestimentos();
     }//GEN-LAST:event_BtCadastrarInvestimentosActionPerformed
+
+    private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaAdm ta = new TelaAdm();
+    }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**
      * @param args the command line arguments

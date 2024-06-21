@@ -78,6 +78,8 @@ public class TelaFAQ extends javax.swing.JFrame {
 
     private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaPrincipal tp = new TelaPrincipal();
     }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**

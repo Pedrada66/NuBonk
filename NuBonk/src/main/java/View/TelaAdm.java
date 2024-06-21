@@ -15,6 +15,8 @@ public class TelaAdm extends javax.swing.JFrame {
      */
     public TelaAdm() {
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -28,6 +30,7 @@ public class TelaAdm extends javax.swing.JFrame {
 
         BtUsuario = new javax.swing.JButton();
         BtInvestimentos = new javax.swing.JButton();
+        BtSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -45,15 +48,23 @@ public class TelaAdm extends javax.swing.JFrame {
             }
         });
 
+        BtSair.setText("Sair");
+        BtSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(174, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtInvestimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtInvestimentos, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(BtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(BtSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(154, 154, 154))
         );
         layout.setVerticalGroup(
@@ -63,7 +74,9 @@ public class TelaAdm extends javax.swing.JFrame {
                 .addComponent(BtUsuario)
                 .addGap(43, 43, 43)
                 .addComponent(BtInvestimentos)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(BtSair)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
@@ -71,11 +84,22 @@ public class TelaAdm extends javax.swing.JFrame {
 
     private void BtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtUsuarioActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaAlterarContaAdm taca = new TelaAlterarContaAdm();
     }//GEN-LAST:event_BtUsuarioActionPerformed
 
     private void BtInvestimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtInvestimentosActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaInvestimentosAdm tia = new TelaInvestimentosAdm();
     }//GEN-LAST:event_BtInvestimentosActionPerformed
+
+    private void BtSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSairActionPerformed
+        // TODO add your handling code here:
+        //Desconectar no DAO
+        dispose();
+        TelaInicial ti = new TelaInicial();
+    }//GEN-LAST:event_BtSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,6 +138,7 @@ public class TelaAdm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtInvestimentos;
+    private javax.swing.JButton BtSair;
     private javax.swing.JButton BtUsuario;
     // End of variables declaration//GEN-END:variables
 }

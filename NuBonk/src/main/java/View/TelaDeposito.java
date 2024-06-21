@@ -32,9 +32,9 @@ public class TelaDeposito extends javax.swing.JFrame {
         RotReais = new javax.swing.JLabel();
         RotDinheiro = new javax.swing.JLabel();
         RotValor = new javax.swing.JLabel();
-        TxtValor = new javax.swing.JTextField();
         BtDepositar = new javax.swing.JButton();
         BtVoltar = new javax.swing.JButton();
+        FtxtValor = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -46,15 +46,21 @@ public class TelaDeposito extends javax.swing.JFrame {
 
         RotValor.setText("Valor:");
 
-        TxtValor.addActionListener(new java.awt.event.ActionListener() {
+        BtDepositar.setText("Depositar");
+        BtDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtValorActionPerformed(evt);
+                BtDepositarActionPerformed(evt);
             }
         });
 
-        BtDepositar.setText("Depositar");
-
         BtVoltar.setText("Voltar");
+        BtVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtVoltarActionPerformed(evt);
+            }
+        });
+
+        FtxtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,12 +79,9 @@ public class TelaDeposito extends javax.swing.JFrame {
                         .addComponent(RotValor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtValor)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BtVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BtDepositar))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(BtVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtDepositar)
+                            .addComponent(FtxtValor))))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -92,7 +95,7 @@ public class TelaDeposito extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RotValor)
-                    .addComponent(TxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FtxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(BtDepositar)
                 .addGap(27, 27, 27)
@@ -103,9 +106,17 @@ public class TelaDeposito extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtValorActionPerformed
+    private void BtDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDepositarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtValorActionPerformed
+        TelaVerificacao tv = new TelaVerificacao();
+        //DAO
+    }//GEN-LAST:event_BtDepositarActionPerformed
+
+    private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaPrincipal tp = new TelaPrincipal();
+    }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,10 +157,10 @@ public class TelaDeposito extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtDepositar;
     private javax.swing.JButton BtVoltar;
+    private javax.swing.JFormattedTextField FtxtValor;
     private javax.swing.JLabel RotDinheiro;
     private javax.swing.JLabel RotReais;
     private javax.swing.JLabel RotSaldo;
     private javax.swing.JLabel RotValor;
-    private javax.swing.JTextField TxtValor;
     // End of variables declaration//GEN-END:variables
 }

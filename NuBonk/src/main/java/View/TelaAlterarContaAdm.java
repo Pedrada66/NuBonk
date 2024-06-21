@@ -49,6 +49,11 @@ public class TelaAlterarContaAdm extends javax.swing.JFrame {
         });
 
         BtAlterar.setText("Alterar");
+        BtAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtAlterarActionPerformed(evt);
+            }
+        });
 
         RotAlteracao.setText("Alteração:");
 
@@ -60,15 +65,30 @@ public class TelaAlterarContaAdm extends javax.swing.JFrame {
 
         TabelaAlteracao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Nome", "CPF", "Endereco", "Data de Nascimento", "Genero", "Telefone", "Email", "Investimentos", "Saldo", "Senha"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(TabelaAlteracao);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,7 +145,15 @@ public class TelaAlterarContaAdm extends javax.swing.JFrame {
 
     private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaAdm ta = new TelaAdm();
     }//GEN-LAST:event_BtVoltarActionPerformed
+
+    private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
+        // TODO add your handling code here:
+        TelaVerificacao tv = new TelaVerificacao();        
+        //DAO
+    }//GEN-LAST:event_BtAlterarActionPerformed
 
     /**
      * @param args the command line arguments

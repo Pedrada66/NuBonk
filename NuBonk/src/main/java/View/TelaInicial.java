@@ -118,18 +118,24 @@ public class TelaInicial extends javax.swing.JFrame {
         String cpf = (String) FtxtCpf.getValue();
         //colocar isso em um método verificaCadastro (Controller)
         switch(cpf){
-            case "000.000.000-00":
+            case "000.000.000-00" -> {
                 System.out.println("Adm");
-                break;
-            default:
+                dispose();
+                TelaAdm ta = new TelaAdm();
+            }
+            default -> {
                 System.out.println("Usuário");
+                dispose();
+                TelaPrincipal tp = new TelaPrincipal();
+            }
         }
         //colocar um método verifica senha (controller)
     }//GEN-LAST:event_BtLoginActionPerformed
 
     private void BtCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastroActionPerformed
         // TODO add your handling code here:
-        System.out.println("Algo 2");
+        dispose();
+        TelaCadastro tc = new TelaCadastro();
     }//GEN-LAST:event_BtCadastroActionPerformed
 
     /**

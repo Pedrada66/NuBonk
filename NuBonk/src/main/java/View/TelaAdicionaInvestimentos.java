@@ -52,6 +52,11 @@ public class TelaAdicionaInvestimentos extends javax.swing.JFrame {
         });
 
         BtVoltar.setText("Voltar");
+        BtVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtVoltarActionPerformed(evt);
+            }
+        });
 
         BtAdicionar.setText("Adicionar");
         BtAdicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,11 +116,18 @@ public class TelaAdicionaInvestimentos extends javax.swing.JFrame {
 
     private void BtAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAdicionarActionPerformed
         // TODO add your handling code here:
+        TelaVerificacao tv = new TelaVerificacao();
     }//GEN-LAST:event_BtAdicionarActionPerformed
 
     private void TxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNomeActionPerformed
+
+    private void BtVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaInvestimentosAdm tia = new TelaInvestimentosAdm();
+    }//GEN-LAST:event_BtVoltarActionPerformed
 
     /**
      * @param args the command line arguments

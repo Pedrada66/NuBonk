@@ -5,9 +5,8 @@
 package com.mycompany.nubonk;
 
 //import Controller.GerenciadorInicial;
-import View.TelaAlterarConta;
-import View.TelaPrincipal;
-
+import View.TelaAdm;
+import View.TelaInicial;
 
 /**
  *
@@ -18,7 +17,6 @@ public class NuBonk {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         //GerenciadorInicial gi = new GerenciadorInicial();
-        TelaPrincipal tp = new TelaPrincipal();
-        TelaAlterarConta tac = new TelaAlterarConta();
+        TelaInicial ti = new TelaInicial();
     }
 }
