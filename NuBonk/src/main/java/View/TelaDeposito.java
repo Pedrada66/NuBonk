@@ -60,7 +60,7 @@ public class TelaDeposito extends javax.swing.JFrame {
             }
         });
 
-        FtxtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
+        FtxtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +108,11 @@ public class TelaDeposito extends javax.swing.JFrame {
 
     private void BtDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDepositarActionPerformed
         // TODO add your handling code here:
-        TelaVerificacao tv = new TelaVerificacao();
+        //TelaVerificacao tv = new TelaVerificacao();
+        String s = (String) FtxtValor.getText();
+        System.out.println(s);
+        float quantidade = Float.parseFloat(s);
+        System.out.println(quantidade);
         //DAO
     }//GEN-LAST:event_BtDepositarActionPerformed
 

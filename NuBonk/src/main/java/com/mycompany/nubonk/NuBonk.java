@@ -5,6 +5,7 @@
 package com.mycompany.nubonk;
 
 //import Controller.GerenciadorInicial;
+import Controller.GerenciadorCliente;
 import View.TelaAdm;
 import View.TelaInicial;
 
@@ -16,7 +17,7 @@ public class NuBonk {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        //GerenciadorInicial gi = new GerenciadorInicial();
-        TelaInicial ti = new TelaInicial();
+        GerenciadorCliente gc = new GerenciadorCliente();
+        gc.GerarTelaInicial();
     }
 }

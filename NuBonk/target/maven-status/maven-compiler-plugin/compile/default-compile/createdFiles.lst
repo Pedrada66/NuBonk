@@ -1,6 +1,5 @@
 View\TelaAdicionaInvestimentos$4.class
 View\TelaPrincipal$3.class
-Controller\GerenciadorInicial.class
 View\TelaInvestimentos$4.class
 View\TelaInvestimentos.class
 View\TelaAlterarContaAdm$3.class
@@ -23,9 +22,11 @@ View\TelaInvestimentosAdm$2.class
 View\TelaPrincipal$4.class
 View\TelaInvestimentos$3.class
 View\TelaDeposito$3.class
+View\TelaAlterarConta$4.class
 View\TelaAlterarContaAdm$2.class
 View\TelaPrincipal.class
 View\TelaInvestimentos$6.class
+View\TelaVerificacao$2.class
 Controller\GerenciadorCliente.class
 View\TelaConta$3.class
 View\TelaConta.class
@@ -69,3 +70,4 @@ View\TelaInvestimentos$1.class
 Model\Investimentos.class
 View\TelaInicial$1.class
 View\TelaConta$1.class
+View\TelaAlterarConta$5.class

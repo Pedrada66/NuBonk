@@ -4,21 +4,141 @@
  */
 package View;
 
+import Controller.GerenciadorCliente;
+import Model.Cliente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
  */
 public class TelaCadastro extends javax.swing.JFrame {
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
     /**
      * Creates new form TelaCadastro
      */
     public TelaCadastro() {
         initComponents();
+    }
+    
+    public TelaCadastro(String cpf, Cliente c) {
+        initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        FtxtCpf.setText(cpf);
+        setCliente(c);
     }
-
+    
+    private void AdicionarCadastro(Cliente c){
+        c.setCpf(new String(FtxtCpf.getText()));
+        c.setGenero(Escolher());
+        c.setDataNascimento(FtxtData.getText());
+        c.setEmail(new String(TxtEmail.getText()));
+        c.setEndereco(new String(TxtEndereco.getText()));
+        c.setNome(new String(TxtNome.getText()));
+        c.setTelefone(FtxtTelefone.getText());
+        c.setSenha(new String(StxtSenha.getPassword()));
+    }
+    
+    private void MostrarCadastro(Cliente c){
+        System.out.println(c.getCpf());
+        System.out.println(c.getGenero());
+        System.out.println(c.getDataNascimento());
+        System.out.println(c.getEmail());
+        System.out.println(c.getEndereco());
+        System.out.println(c.getNome());
+        System.out.println(c.getTelefone());
+        System.out.println(c.getSenha());
+        
+    }
+    
+    private String Escolher(){
+        String escolhido = (String) CboxGenero.getSelectedItem();
+        return escolhido;
+    }
+    
+    private int VerificaPreenchimento(){
+        try{
+            if((FtxtCpf.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((new String(StxtSenha.getPassword())).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((FtxtTelefone.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((TxtEmail.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((TxtNome.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((TxtEndereco.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((FtxtData.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        return 0;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,11 +148,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        GrupoGenero = new javax.swing.ButtonGroup();
         BtVoltar = new javax.swing.JButton();
         BtCadastrar = new javax.swing.JButton();
-        RbtFeminino = new javax.swing.JRadioButton();
-        RbtMasculino = new javax.swing.JRadioButton();
         RotGenero = new javax.swing.JLabel();
         RotNome = new javax.swing.JLabel();
         RotData = new javax.swing.JLabel();
@@ -48,6 +165,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         TxtEndereco = new javax.swing.JTextField();
         TxtEmail = new javax.swing.JTextField();
         StxtSenha = new javax.swing.JPasswordField();
+        CboxGenero = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,12 +182,6 @@ public class TelaCadastro extends javax.swing.JFrame {
                 BtCadastrarActionPerformed(evt);
             }
         });
-
-        GrupoGenero.add(RbtFeminino);
-        RbtFeminino.setText("Feminino");
-
-        GrupoGenero.add(RbtMasculino);
-        RbtMasculino.setText("Masculino");
 
         RotGenero.setText("Gênero:");
 
@@ -108,6 +220,8 @@ public class TelaCadastro extends javax.swing.JFrame {
         StxtSenha.setName(""); // NOI18N
         StxtSenha.setOpaque(true);
 
+        CboxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,13 +229,6 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(RotGenero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RbtMasculino)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RbtFeminino)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -146,13 +253,17 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(FtxtCpf)
                                 .addGap(220, 220, 220))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(RotData)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FtxtData, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(RotNome)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(RotGenero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CboxGenero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(RotData)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FtxtData, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 129, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtVoltar)
@@ -178,8 +289,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RotGenero)
-                    .addComponent(RbtMasculino)
-                    .addComponent(RbtFeminino))
+                    .addComponent(CboxGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RotTelefone)
@@ -196,7 +306,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RotSenha)
                     .addComponent(StxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtVoltar)
                     .addComponent(BtCadastrar))
@@ -215,8 +325,18 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void BtCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastrarActionPerformed
         // TODO add your handling code here:
         //mandar para o DAO
-        dispose();
-        TelaPrincipal tp = new TelaPrincipal();
+        int i = VerificaPreenchimento();
+        switch(i){
+            case 0:
+                dispose();
+                AdicionarCadastro(cliente);
+                MostrarCadastro(cliente);
+                GerenciadorCliente gc = new GerenciadorCliente();
+                gc.setC(cliente);
+                TelaPrincipal tp = new TelaPrincipal(cliente);
+            default: 
+                System.out.println("Erro");
+        }
     }//GEN-LAST:event_BtCadastrarActionPerformed
 
     /**
@@ -257,12 +377,10 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtCadastrar;
     private javax.swing.JButton BtVoltar;
+    private javax.swing.JComboBox<String> CboxGenero;
     private javax.swing.JFormattedTextField FtxtCpf;
     private javax.swing.JFormattedTextField FtxtData;
     private javax.swing.JFormattedTextField FtxtTelefone;
-    private javax.swing.ButtonGroup GrupoGenero;
-    private javax.swing.JRadioButton RbtFeminino;
-    private javax.swing.JRadioButton RbtMasculino;
     private javax.swing.JLabel RotCpf;
     private javax.swing.JLabel RotData;
     private javax.swing.JLabel RotEmail;

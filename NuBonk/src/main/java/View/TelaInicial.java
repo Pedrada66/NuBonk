@@ -4,14 +4,27 @@
  */
 package View;
 
+import Controller.GerenciadorCliente;
+import Model.Cliente;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author pedro
  */
 public class TelaInicial extends javax.swing.JFrame {
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+   
     /**
      * Creates new form TelaPrincipal
      */
@@ -20,7 +33,51 @@ public class TelaInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    
+    public TelaInicial(Cliente c) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+    
+    private void VerificaSenhaAdm(char[] senha){
+        System.out.println(senha);
+        char[] senhaCorreta = {'3','1','2'};
+        boolean passwordMatches = Arrays.equals(senha, senhaCorreta);
+        if(passwordMatches){
+            System.out.println("Adm");
+            dispose();
+            TelaAdm ta = new TelaAdm();
+        }
+        else{
+            System.out.println("Senha incorreta");
+        }
+    }
+    
+    private int VerificaPreenchimento(){
+        try{
+            if((FtxtCpf.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        try{
+            if((new String(TxtSenha.getPassword())).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                return 1;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        return 0;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -116,17 +173,18 @@ public class TelaInicial extends javax.swing.JFrame {
     private void BtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtLoginActionPerformed
         // TODO add your handling code here:
         String cpf = (String) FtxtCpf.getValue();
+        char[] senha = TxtSenha.getPassword();
         //colocar isso em um método verificaCadastro (Controller)
-        switch(cpf){
-            case "000.000.000-00" -> {
-                System.out.println("Adm");
-                dispose();
-                TelaAdm ta = new TelaAdm();
-            }
-            default -> {
-                System.out.println("Usuário");
-                dispose();
-                TelaPrincipal tp = new TelaPrincipal();
+        int i = VerificaPreenchimento();
+        if(i == 0){
+            switch(cpf){
+                case "000.000.000-00" -> {
+                    VerificaSenhaAdm(senha);
+                }
+                default -> {
+                    dispose();
+                    TelaPrincipal tp = new TelaPrincipal();
+                }
             }
         }
         //colocar um método verifica senha (controller)
@@ -135,7 +193,9 @@ public class TelaInicial extends javax.swing.JFrame {
     private void BtCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastroActionPerformed
         // TODO add your handling code here:
         dispose();
-        TelaCadastro tc = new TelaCadastro();
+        String cpf = (String) FtxtCpf.getValue();
+        GerenciadorCliente gc = new GerenciadorCliente();
+        gc.GerarTelaCadastro(cpf);
     }//GEN-LAST:event_BtCadastroActionPerformed
 
     /**

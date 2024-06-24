@@ -4,12 +4,24 @@
  */
 package View;
 
+import Controller.GerenciadorCliente;
+import Model.Cliente;
+
 /**
  *
  * @author pedro
  */
 public class TelaPrincipal extends javax.swing.JFrame {
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
     /**
      * Creates new form TelaPrincipal
      */
@@ -19,6 +31,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setVisible(true);
     }
 
+    public TelaPrincipal(Cliente c) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setCliente(c);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,7 +125,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void BtContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtContaActionPerformed
         // TODO add your handling code here:
         dispose();
-        TelaConta tc = new TelaConta();
+        GerenciadorCliente gc = new GerenciadorCliente();
+        gc.GerarTelaConta(cliente);
     }//GEN-LAST:event_BtContaActionPerformed
 
     private void BtInvestimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtInvestimentosActionPerformed

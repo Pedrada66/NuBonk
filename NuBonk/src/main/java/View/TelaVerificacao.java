@@ -18,7 +18,21 @@ public class TelaVerificacao extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    
+    public TelaVerificacao(int tela) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+    
+    private void VerificaSenha(int tela){
+        switch(tela){
+            case 1 -> System.out.println("Senha cliente verificada");
+            case 2 -> System.out.println("Senha adm verificada");
+            default -> System.out.println("Erro");
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,6 +51,11 @@ public class TelaVerificacao extends javax.swing.JFrame {
         RotSenha.setText("Digite sua senha:");
 
         BtConfirmar.setText("Confirmar");
+        BtConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtConfirmarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,6 +86,10 @@ public class TelaVerificacao extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtConfirmarActionPerformed
 
     /**
      * @param args the command line arguments

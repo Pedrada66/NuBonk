@@ -9,5 +9,8 @@ package Controller;
  * @author pedro
  */
 public class GerenciadorAdm {
+
+    public GerenciadorAdm() {
+    }
     
 }

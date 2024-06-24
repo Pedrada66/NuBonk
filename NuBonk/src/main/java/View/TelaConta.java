@@ -4,6 +4,7 @@
  */
 package View;
 
+import Model.Cliente;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
@@ -12,7 +13,16 @@ import javax.swing.JPasswordField;
  * @author pedro
  */
 public class TelaConta extends javax.swing.JFrame {
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
     /**
      * Creates new form TelaConta
      */
@@ -21,7 +31,25 @@ public class TelaConta extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    
+    public TelaConta(Cliente c) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setCliente(c);
+        MostrarConta();
+    }
+    
+    private void MostrarConta(){
+        ValorNome.setText(cliente.getNome());
+        ValorCpf.setText(cliente.getCpf());
+        ValorData.setText(cliente.getDataNascimento());
+        ValorEmail.setText(cliente.getEmail());
+        ValorGenero.setText(cliente.getGenero());
+        ValorTelefone.setText(cliente.getTelefone());
+        ValorEndereco.setText(cliente.getEndereco());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

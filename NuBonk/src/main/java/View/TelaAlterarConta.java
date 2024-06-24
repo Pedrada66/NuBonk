@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
@@ -17,8 +19,46 @@ public class TelaAlterarConta extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        StxtSenha.setVisible(false);
+        FtxtTelefone.setVisible(false);
     }
 
+    private void EnderecoEscolhido(){
+        TxtAlteracao.setVisible(true);
+        StxtSenha.setVisible(false);
+        FtxtTelefone.setVisible(false);
+    }
+    
+    private void TelefoneEscolhido(){
+        TxtAlteracao.setVisible(false);
+        StxtSenha.setVisible(false);
+        FtxtTelefone.setVisible(true);
+    }
+    
+    private void EmailEscolhido(){
+        TxtAlteracao.setVisible(true);
+        StxtSenha.setVisible(false);
+        FtxtTelefone.setVisible(false);
+    }
+    
+    private void SenhaEscolhido(){
+        TxtAlteracao.setVisible(false);
+        StxtSenha.setVisible(true);
+        FtxtTelefone.setVisible(false);
+    }
+    
+    private String Escolher(){
+        String escolhido = (String) CboxAlternar.getSelectedItem();
+        switch(escolhido){
+            case "Endereco" -> EnderecoEscolhido();
+            case "Telefone" -> TelefoneEscolhido();
+            case "Email" -> EmailEscolhido();
+            case "Senha" -> SenhaEscolhido();
+            default -> JOptionPane.showMessageDialog(this, "Invalid action! Please try again.",
+                    "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        return escolhido;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,18 +68,28 @@ public class TelaAlterarConta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CboxAlterar = new javax.swing.JComboBox<>();
+        CboxAlternar = new javax.swing.JComboBox<>();
         RotAlterar = new javax.swing.JLabel();
         BtVoltar = new javax.swing.JButton();
         BtAlterar = new javax.swing.JButton();
         RotAlteracao = new javax.swing.JLabel();
         TxtAlteracao = new javax.swing.JTextField();
+        FtxtTelefone = new javax.swing.JFormattedTextField();
+        StxtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CboxAlterar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Endereço", "Telefone", "Email", "Senha" }));
+        CboxAlternar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Endereco", "Telefone", "Email", "Senha" }));
+        CboxAlternar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CboxAlternarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CboxAlternar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 232, -1));
 
         RotAlterar.setText("O que deseja alterar:");
+        getContentPane().add(RotAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 110, -1, -1));
 
         BtVoltar.setText("Voltar");
         BtVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +97,7 @@ public class TelaAlterarConta extends javax.swing.JFrame {
                 BtVoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(BtVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 285, -1, -1));
 
         BtAlterar.setText("Alterar");
         BtAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -54,47 +105,27 @@ public class TelaAlterarConta extends javax.swing.JFrame {
                 BtAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(BtAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 285, -1, -1));
 
         RotAlteracao.setText("Alteração:");
+        getContentPane().add(RotAlteracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 172, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(139, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(RotAlteracao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TxtAlteracao))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BtVoltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtAlterar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(RotAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CboxAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(126, 126, 126))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CboxAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RotAlterar))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RotAlteracao)
-                    .addComponent(TxtAlteracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtVoltar)
-                    .addComponent(BtAlterar))
-                .addGap(79, 79, 79))
-        );
+        TxtAlteracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtAlteracaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtAlteracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 169, 286, -1));
+
+        try {
+            FtxtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(FtxtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 110, -1));
+
+        StxtSenha.setToolTipText("");
+        getContentPane().add(StxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 180, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,8 +138,17 @@ public class TelaAlterarConta extends javax.swing.JFrame {
 
     private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
         // TODO add your handling code here:
-        TelaVerificacao tv = new TelaVerificacao();
+        //TelaVerificacao tv = new TelaVerificacao();
     }//GEN-LAST:event_BtAlterarActionPerformed
+
+    private void CboxAlternarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CboxAlternarActionPerformed
+        // TODO add your handling code here:
+        Escolher();
+    }//GEN-LAST:event_CboxAlternarActionPerformed
+
+    private void TxtAlteracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAlteracaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtAlteracaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,9 +188,11 @@ public class TelaAlterarConta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtAlterar;
     private javax.swing.JButton BtVoltar;
-    private javax.swing.JComboBox<String> CboxAlterar;
+    private javax.swing.JComboBox<String> CboxAlternar;
+    private javax.swing.JFormattedTextField FtxtTelefone;
     private javax.swing.JLabel RotAlteracao;
     private javax.swing.JLabel RotAlterar;
+    private javax.swing.JPasswordField StxtSenha;
     private javax.swing.JTextField TxtAlteracao;
     // End of variables declaration//GEN-END:variables
 }
