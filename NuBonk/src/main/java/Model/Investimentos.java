@@ -15,6 +15,12 @@ public class Investimentos {
     public Investimentos() {
     
     }
+
+    public Investimentos(String nome, String codigo, float valor) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.valor = valor;
+    }
     
     public String getNome() {
         return nome;

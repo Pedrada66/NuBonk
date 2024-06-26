@@ -12,6 +12,15 @@ import javax.swing.JOptionPane;
  */
 public class TelaVerificacao extends javax.swing.JFrame {
     private String senha;
+    private boolean verifica;
+
+    public boolean isVerifica() {
+        return verifica;
+    }
+
+    public void setVerifica(boolean verifica) {
+        this.verifica = verifica;
+    }
 
     public String getSenha() {
         return senha;
@@ -27,6 +36,7 @@ public class TelaVerificacao extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        setSenha("123");
     }
     
     public TelaVerificacao(int usuario) {
@@ -125,16 +135,11 @@ public class TelaVerificacao extends javax.swing.JFrame {
         //int i = VerificaSenha(getSenha());
         char[] senhaEntrada = StextSenha.getPassword();
         char[] senhaCorreta = getSenha().toCharArray();
-        boolean isCorrect = java.util.Arrays.equals(senhaEntrada, senhaCorreta);
-        if(isCorrect == true){
+        setVerifica(java.util.Arrays.equals(senhaEntrada, senhaCorreta));
+        if(verifica == true){
             dispose();
-            System.out.println("Parabéns, funciona");
         }
-        System.out.println(isCorrect);
-        /*if(i==0){
-            System.out.println("concluido");
-            dispose();
-        }*/
+        System.out.println(verifica);
     }//GEN-LAST:event_BtConfirmarActionPerformed
 
     /**

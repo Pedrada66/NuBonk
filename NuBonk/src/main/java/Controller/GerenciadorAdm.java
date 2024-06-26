@@ -13,4 +13,11 @@ public class GerenciadorAdm {
     public GerenciadorAdm() {
     }
     
+    public void cadastrarInvestimentos(){
+        
+    }
+    
+    public void gerenciarDados(){
+    
+    }
 }

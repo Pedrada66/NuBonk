@@ -53,4 +53,24 @@ public class GerenciadorCliente {
         System.out.println(c.getTelefone());
         System.out.println(c.getSenha());
     }
+    
+    public void criarConta(){
+        
+    }
+    
+    public void excluirConta(){
+    
+    }
+    
+    public void realizarDeposito(){
+    
+    }
+    
+    public void realizarInvestimento(){
+    
+    }
+    
+    public void alterarConta(){
+        
+    }
 }

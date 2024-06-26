@@ -19,6 +19,21 @@ public class Cliente extends Pessoa{
         super(cpf, senha);
     }
     
+    public Cliente(String nome, String endereco, String cpf, String telefone,
+                   String genero, String datanascimento, String email, String senha,
+                   float saldo, int qtdinvestimento) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.genero = genero;
+        this.dataNascimento = datanascimento;
+        this.email = email;
+        this.senha = senha;
+        this.saldo = saldo;
+        this.quantidadeInvestimento = qtdinvestimento;
+    }
+    
     public int getNumeroConta() {
         return numeroConta;
     }

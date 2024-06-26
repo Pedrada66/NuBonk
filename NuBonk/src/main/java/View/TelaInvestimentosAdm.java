@@ -4,12 +4,26 @@
  */
 package View;
 
+import Controller.GerenciadorDAO;
+import Model.Investimentos;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pedro
  */
 public class TelaInvestimentosAdm extends javax.swing.JFrame {
+    Investimentos investimentos; 
 
+    public Investimentos getInvestimentos() {
+        return investimentos;
+    }
+
+    public void setInvestimentos(Investimentos investimentos) {
+        this.investimentos = investimentos;
+    }
+    
     /**
      * Creates new form TelaInvestimentosAdm
      */
@@ -17,6 +31,14 @@ public class TelaInvestimentosAdm extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        GerenciadorDAO gd = new GerenciadorDAO();
+        List<Investimentos> investimentos = gd.listarInvestimentos();
+        DefaultTableModel model = (DefaultTableModel) TabelaInvestimentos.getModel();
+        model.setRowCount(0); // Limpa a tabela
+
+        for (Investimentos inv : investimentos) {
+            model.addRow(new Object[]{inv.getNome(), inv.getCodigo(), inv.getValor()});
+        }
     }
 
     /**
