@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
@@ -17,6 +20,7 @@ public class TelaDeposito extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        //já atualizar automaticamento o saldo da pessoa
     }
 
     /**
@@ -34,7 +38,7 @@ public class TelaDeposito extends javax.swing.JFrame {
         RotValor = new javax.swing.JLabel();
         BtDepositar = new javax.swing.JButton();
         BtVoltar = new javax.swing.JButton();
-        FtxtValor = new javax.swing.JFormattedTextField();
+        TxtValor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -60,8 +64,6 @@ public class TelaDeposito extends javax.swing.JFrame {
             }
         });
 
-        FtxtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,7 +83,7 @@ public class TelaDeposito extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BtVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtDepositar)
-                            .addComponent(FtxtValor))))
+                            .addComponent(TxtValor))))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +97,7 @@ public class TelaDeposito extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RotValor)
-                    .addComponent(FtxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(BtDepositar)
                 .addGap(27, 27, 27)
@@ -109,10 +111,26 @@ public class TelaDeposito extends javax.swing.JFrame {
     private void BtDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDepositarActionPerformed
         // TODO add your handling code here:
         //TelaVerificacao tv = new TelaVerificacao();
-        String s = (String) FtxtValor.getText();
-        System.out.println(s);
-        float quantidade = Float.parseFloat(s);
-        System.out.println(quantidade);
+        String stringValor = (String) TxtValor.getText();
+        String stringRotulo = RotDinheiro.getText();
+        System.out.println(stringValor);
+        try{
+            float quantidade = (Float.valueOf(stringValor)).floatValue();
+            System.out.println(quantidade);
+            float valor = (Float.valueOf(stringRotulo)).floatValue();
+            valor = valor + quantidade;
+            DecimalFormat df = new DecimalFormat("#.##");
+            String valorDecimal = df.format(valor);
+            RotDinheiro.setText(Float.toString(valor));
+        }
+        catch(NumberFormatException e){
+            System.out.println("Erro: "+e);
+            JOptionPane.showMessageDialog(this, "Número invpalido",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
+      
+        //RotDinheiro.setText(s);
         //DAO
     }//GEN-LAST:event_BtDepositarActionPerformed
 
@@ -161,10 +179,10 @@ public class TelaDeposito extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtDepositar;
     private javax.swing.JButton BtVoltar;
-    private javax.swing.JFormattedTextField FtxtValor;
     private javax.swing.JLabel RotDinheiro;
     private javax.swing.JLabel RotReais;
     private javax.swing.JLabel RotSaldo;
     private javax.swing.JLabel RotValor;
+    private javax.swing.JTextField TxtValor;
     // End of variables declaration//GEN-END:variables
 }

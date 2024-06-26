@@ -4,12 +4,22 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
  */
 public class TelaVerificacao extends javax.swing.JFrame {
+    private String senha;
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
     /**
      * Creates new form TelaVerificação
      */
@@ -19,18 +29,40 @@ public class TelaVerificacao extends javax.swing.JFrame {
         setVisible(true);
     }
     
-    public TelaVerificacao(int tela) {
+    public TelaVerificacao(int usuario) {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        switch(usuario){
+            case 0: 
+                System.out.println("Adm");
+                setSenha("312");
+                break;
+            case 1:
+                System.out.println("Cliente");
+                setSenha("123");
+                break;
+            default:
+                System.out.println("Erro");
+        }
     }
     
-    private void VerificaSenha(int tela){
-        switch(tela){
-            case 1 -> System.out.println("Senha cliente verificada");
-            case 2 -> System.out.println("Senha adm verificada");
-            default -> System.out.println("Erro");
+    private int VerificaSenha(String senha){
+        System.out.println(senha);
+        try{
+            if(new String(StextSenha.getPassword()) == "123"){
+                System.out.println("Parabens");
+                return 0;
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Senha incorreta",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+            }    
         }
+        catch(Exception e){
+            System.out.println("Senha incorret"+e);
+        }
+        return 1;
     }
     
     /**
@@ -89,6 +121,20 @@ public class TelaVerificacao extends javax.swing.JFrame {
 
     private void BtConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtConfirmarActionPerformed
         // TODO add your handling code here:
+        
+        //int i = VerificaSenha(getSenha());
+        char[] senhaEntrada = StextSenha.getPassword();
+        char[] senhaCorreta = getSenha().toCharArray();
+        boolean isCorrect = java.util.Arrays.equals(senhaEntrada, senhaCorreta);
+        if(isCorrect == true){
+            dispose();
+            System.out.println("Parabéns, funciona");
+        }
+        System.out.println(isCorrect);
+        /*if(i==0){
+            System.out.println("concluido");
+            dispose();
+        }*/
     }//GEN-LAST:event_BtConfirmarActionPerformed
 
     /**

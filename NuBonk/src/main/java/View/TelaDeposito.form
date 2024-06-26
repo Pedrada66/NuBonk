@@ -39,7 +39,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="BtVoltar" min="-2" pref="80" max="-2" attributes="0"/>
                           <Component id="BtDepositar" min="-2" max="-2" attributes="0"/>
-                          <Component id="FtxtValor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtValor" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -59,7 +59,7 @@
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="RotValor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="FtxtValor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TxtValor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="BtDepositar" min="-2" max="-2" attributes="0"/>
@@ -107,12 +107,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="FtxtValor">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#,##0.00" subtype="-1" type="0"/>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="TxtValor">
     </Component>
   </SubComponents>
 </Form>

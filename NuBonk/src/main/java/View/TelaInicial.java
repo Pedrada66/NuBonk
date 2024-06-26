@@ -51,6 +51,8 @@ public class TelaInicial extends javax.swing.JFrame {
         }
         else{
             System.out.println("Senha incorreta");
+            JOptionPane.showMessageDialog(this, "Senha Incorreta",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }
     

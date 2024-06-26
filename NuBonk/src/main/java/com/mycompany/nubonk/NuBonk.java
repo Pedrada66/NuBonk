@@ -6,6 +6,7 @@ package com.mycompany.nubonk;
 
 //import Controller.GerenciadorInicial;
 import Controller.GerenciadorCliente;
+import Controller.GerenciadorDAO;
 import View.TelaAdm;
 import View.TelaInicial;
 
@@ -16,8 +17,13 @@ import View.TelaInicial;
 public class NuBonk {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        GerenciadorCliente gc = new GerenciadorCliente();
-        gc.GerarTelaInicial();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                GerenciadorCliente gc = new GerenciadorCliente();
+                gc.GerarTelaInicial();
+                GerenciadorDAO gd = new GerenciadorDAO();
+                gd.inserirInvestimento();
+            }
+        });
     }
 }

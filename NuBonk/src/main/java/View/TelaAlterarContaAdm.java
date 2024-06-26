@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pedro
@@ -17,6 +19,23 @@ public class TelaAlterarContaAdm extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+    
+    private int VerificaPreenchimento(){
+        try{
+            if((TxtConta.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if((TxtAlteracao.getText()).isEmpty()){
+                JOptionPane.showMessageDialog(this, "Preencha todos os dados",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Erro: "+e);
+        }
+        return 0;
     }
 
     /**
@@ -151,7 +170,10 @@ public class TelaAlterarContaAdm extends javax.swing.JFrame {
 
     private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
         // TODO add your handling code here:
-        TelaVerificacao tv = new TelaVerificacao();        
+        int i = VerificaPreenchimento();
+        if(i == 0){
+            TelaVerificacao tv = new TelaVerificacao(0);
+        }
         //DAO
     }//GEN-LAST:event_BtAlterarActionPerformed
 
